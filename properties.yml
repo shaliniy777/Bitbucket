@@ -1,0 +1,5 @@
+REBEL_BPS_DOC_VOLUME_STORAGE_SIZE: 500Mi
+USECASE: casemanagementusecase
+USECASE_DATA_INJECT_SQL_FILE: ""
+CASE_MANAGEMENT_SERVICE_RELEASE: [develop-success=true]
+BPS_MOCK_API_RELEASE: [git-branch=feature/elves/bps-mock]

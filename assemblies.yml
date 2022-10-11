@@ -1,0 +1,42 @@
+blueprintRepository: https://code.experian.local/scm/dasa/software-use-gsg-casemanagementusecase
+blueprintRepositoryReference: master
+assemblies:
+  usecase-shared:
+     description: provides solution configuration for client data for the casemanagementusecase usecase
+     assemblyPath: blueprint/casemanagementusecase-shared-assembly.yml
+  prod:
+    description: casemanagementusecase production
+    assemblyPath: blueprint/casemanagementusecase-prod-assembly.yml
+  sandbox:
+    description: casemanagementusecase sandbox
+    assemblyPath: blueprint/casemanagementusecase-sandbox-assembly.yml
+  prod-override:
+    description: A casemanagementusecase environment that comes with the feature override functionality to update the case-management-service release.
+    assemblyPath: blueprint/development/casemanagementusecase-light-prod-override-assembly.yml
+  sandbox-override:
+    description: A casemanagementusecase environment that comes with the feature override functionality to update the case-management-service release.
+    assemblyPath: blueprint/development/casemanagementusecase-light-sandbox-override-assembly.yml
+  prod-lightweight:
+    description: A casemanagementusecase environemnt that supports screen and rest based applications without the overheads of client-data, batch-fileprocessing, scheduling, bi
+    assemblyPath: blueprint/development/casemanagementusecase-light-prod-assembly.yml
+  prod-daily:
+    description: A casemanagementusecase environemnt that supports screen and rest based applications without the overheads of client-data, batch-fileprocessing, scheduling, bi
+    assemblyPath: blueprint/development/casemanagementusecase-light-prod-assembly.yml
+  sandbox-lightweight:
+    description: casemanagementusecase sandbox
+    assemblyPath: blueprint/development/casemanagementusecase-light-sandbox-assembly.yml
+  sandbox-daily:
+    description: casemanagementusecase sandbox
+    assemblyPath: blueprint/development/casemanagementusecase-light-sandbox-assembly.yml
+  prod-i18n:
+    description: A casemanagementusecase environemnt to test i18n
+    assemblyPath: blueprint/development/casemanagementusecase-i18n-prod-assembly.yml
+  sandbox-i18n:
+    description: casemanagementusecase sandbox
+    assemblyPath: blueprint/development/casemanagementusecase-i18n-sandbox-assembly.yml
+  sandbox-mock-sts:
+    description: casemanagementusecase sandbox that connects to mock STS
+    assemblyPath: blueprint/casemanagementusecase-sandbox-mock-sts-assembly.yml
+  mock:
+    description: casemanagementusecase that connects to mock BPS
+    assemblyPath: blueprint/development/casemanagementusecase-mock-assembly.yml
