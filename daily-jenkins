@@ -1,0 +1,29 @@
+#!/usr/bin/groovy
+
+properties([
+        pipelineTriggers([cron('0 21 * * *')])
+])
+
+stage("Case Management Use Case New Client Test Execution") {
+    def jobResult = build job: "testpipeline-casemanagementusecase/master",
+            parameters: [
+                    string(name: 'OPERATION', value: "create"),
+                    booleanParam(name: 'DEPLOY_CLIENT_SHARED', value: true),
+                    booleanParam(name: 'DEPLOY_CLIENT_DATA_PROD', value: true),
+                    booleanParam(name: 'DEPLOY_CLIENT_DATA_SANDBOX', value: false),
+                    booleanParam(name: 'DEPLOY_USECASE_PROD', value: true),
+                    booleanParam(name: 'DEPLOY_USECASE_SANDBOX', value: false),
+                    booleanParam(name: 'WAIT_TEST_ENVIRONMENT_PROVISIONED', value: true),
+                    booleanParam(name: 'JOIN_NAMESPACES', value: true),
+                    string(name: 'EXTEND_TEST_ENV_FOR_X_HOURS', value: "12"),
+                    string(name: 'TEST_TYPE', value: "daily"),
+                    booleanParam(name: 'RUN_CM_TEST', value: true),
+                    booleanParam(name: 'DELETE_TEST_ENV_AFTER_TEST', value: true),
+					booleanParam(name: 'USE_HEADLESS_TEST_PIPELINE', value: false),
+                    booleanParam(name: 'DB_CONFIG_PROPERTIES_UPDATE', value: true)
+            ],
+            wait: true,
+            propagate: false
+
+    currentBuild.result = jobResult.result
+}
